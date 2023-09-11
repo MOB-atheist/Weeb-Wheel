@@ -1,14 +1,24 @@
-import './App.css'
+import { RouterProvider, createHashRouter } from "react-router-dom";
+import Cookies from "./pages/cookies";
+import Landing from "./pages/landing";
 
-function App() {
+const router = createHashRouter([
+    {
+        path: "/cookies",
+        element: <Cookies />,
+    },
+    {
+        path: "/",
+        element: <Landing />,
+    },
+]);
 
-  return (
-    <div className="App">
-      <div className="hero-container">
-        <h2 className="hero glitch layers" data-text="Coming Soon"><span>Coming Soon</span></h2>
-      </div>
-    </div>
-  )
+export default function App() {
+    return (
+        <div className="App">
+            <div className="container">
+                <RouterProvider router={router}></RouterProvider>
+            </div>
+        </div>
+    );
 }
-
-export default App
