@@ -36,6 +36,9 @@ jobs:
     name: Deploy
     needs: build
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: front
     if: github.ref == 'refs/heads/main'
 
     steps:
