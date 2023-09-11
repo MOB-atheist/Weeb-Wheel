@@ -4,12 +4,14 @@ import Landing from "./pages/landing";
 
 const router = createHashRouter([
     {
-        path: "/cookies",
-        element: <Cookies />,
-    },
-    {
         path: "/",
         element: <Landing />,
+        children: [
+            {
+                path: "cookies",
+                element: <Cookies />,
+            },
+        ]
     },
 ]);
 
